@@ -2,13 +2,11 @@
 
 ## Information
 
-The Decimal value type represents decimal numbers ranging from positive
-79,228,162,514,264,337,593,543,950,335 to negative
-79,228,162,514,264,337,593,543,950,335.  The Decimal value type is
-appropriate for financial calculations that require large numbers of
-significant integral and fractional digits and no round-off errors.
-The Decimal type does not eliminate the need for rounding. Rather, it
-minimizes errors due to rounding.
+The Decimal value type represents decimal numbers ranging from 7.9e+29 to
+-7.9e+29  The Decimal value type is appropriate for financial calculations
+that require large numbers of significant integral and fractional digits
+and no round-off errors.  The Decimal type does not eliminate the need
+for rounding. Rather, it minimizes errors due to rounding.
 
 The concept of a decimal number is implemented through a structure that
 stores an array of 4 elements of the int type and one element of the
