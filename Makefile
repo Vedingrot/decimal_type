@@ -6,6 +6,7 @@ GFLAGS= -fprofile-arcs -ftest-coverage
 HEADERS=s21_decimal.h
 SOURCES=another.c arithmetics.c big_decimal_core.c converters.c \
 	decimal_core.c equal.c help_functions.c  
+VPATH = src/
 
 OBJECTS=$(SOURCES:.c=.o)
 OS := $(shell uname)
@@ -17,7 +18,7 @@ endif
 all: s21_decimal.a
 
 $(OBJECTS): $(SOURCES) $(HEADERS)
-	$(CC) $(CFLAGS) $(SOURCES)
+	$(CC) $(CFLAGS) $^
 
 s21_decimal.a: $(OBJECTS)
 	ar rc $@ $(OBJECTS)
@@ -31,7 +32,7 @@ test: test.c s21_decimal.a
 	./test.out
 
 gcov_report: $(SOURCES)
-	$(CC) $(CFLAGS) $(SOURCES) $(GFLAGS)
+	$(CC) $(CFLAGS) $^ $(GFLAGS)
 	ar rcs libs21_decimal.a $(OBJECTS)
 	$(CC) -o gcov.out test.c $(LDFLAGS) -lgcov
 	rm -f *.o
