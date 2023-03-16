@@ -2,6 +2,10 @@
 
 ## Information
 
+An interesting project about the implementation high precision floating
+point datatype. Arithmetic decimal operators realized by bitwise operators,
+which gives insign how computing systems works.
+
 The Decimal value type represents decimal numbers ranging from 7.9e+29 to
 -7.9e+29  The Decimal value type is appropriate for financial calculations
 that require large numbers of significant integral and fractional digits
@@ -20,6 +24,12 @@ integral and fractional parts of the numeric value.
 The scaling factor also can preserve any trailing zeros in a Decimal number.
 Trailing zeros do not affect the value of a Decimal number in arithmetic
 or comparison operations. 
+
+## Build
+
+Just call make to build library.
+
+Requirements: gcc, make, libcheck (for tests).
 
 ## Decimal functions and operators
 
